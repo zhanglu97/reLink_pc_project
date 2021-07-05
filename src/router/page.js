@@ -10,6 +10,8 @@ import SystemLog from '@/page/mainContent/System/SystemLog/Index' //系统管理
 import CustomerOverview from '@/page/mainContent/CustomerOverview/Index' //客户总览
 //**************负荷指数**************
 import LoadIndex from '@/page/mainContent/LoadIndex/Index' //负荷指数
+//**************云服务**************
+import CloudService from '@/page/mainContent/CloudService/Index' //云服务
 
 // **************登录后访问的路由**********
 export default [
@@ -58,5 +60,10 @@ export default [
         name: 'LoadIndex',
         meta: {title: '负荷指数'},
         component: LoadIndex
+    }, {
+        path: 'CloudService',
+        name: 'CloudService',
+        meta: {title: '云服务'},
+        component: CloudService
     }, 
 ]

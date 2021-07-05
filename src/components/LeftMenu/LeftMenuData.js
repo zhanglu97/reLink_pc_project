@@ -13,6 +13,10 @@ export default [
         title: '负荷指数',
         icon: 'iconshishifuhe',
     }, {
+        name: 'CloudService',//路由name
+        title: '云服务',
+        icon: 'iconyun',
+    }, {
         title: '系统设置',
         icon: 'iconxitongguanli',
         children: [ //子菜单

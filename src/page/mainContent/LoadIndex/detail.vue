@@ -2,82 +2,131 @@
     <div class="addProject UserAdd">
         <div class="addForm zll-form">
             <el-row :gutter="20">
-                <el-col :span="9">
+                <el-col :span="12">
                     <div class="formList">
                         <span class="text_left">客户名称：</span>
                         <span class="text_right">上海远大精密股份有限公司</span>
                     </div>
                     <div class="formList">
-                        <span class="text_left">区域：</span>
-                        <span class="text_right">上海市 浦东新区</span>
+                        <span class="text_left">授权日期：</span>
+                        <span class="text_right">2021-01-01</span>
                     </div>
                     <div class="formList">
-                        <span class="text_left">注册日期：</span>
-                        <span class="text_right">2019-03-12</span>
+                        <span class="text_left">设备名称：</span>
+                        <span class="text_right">数控立车</span>
                     </div>
                     <div class="formList">
-                        <span class="text_left">设备总数：</span>
-                        <span class="text_right">6</span>
-                    </div>
-                </el-col>
-                <el-col :span="6">
-                    <div class="formList">
-                        <div class="zll-botton run">运行</div>
-                        <span class="num run">2</span>
+                        <span class="text_left">型号：</span>
+                        <span class="text_right">KDJC60/2C</span>
                     </div>
                     <div class="formList">
-                        <div class="zll-botton stop">停机</div>
-                        <span class="num stop">1</span>
+                        <span class="text_left">设备码：</span>
+                        <span class="text_right">KVDL21030012</span>
                     </div>
                     <div class="formList">
-                        <div class="zll-botton bj">报警</div>
-                        <span class="num bj">1</span>
-                    </div>
-                    <div class="formList">
-                        <div class="zll-botton gj">关机</div>
-                        <span class="num gj">2</span>
-                    </div>
-                </el-col>
-                <el-col :span="9">
-                    <div class="formList">
-                        <span class="text_left">购买次数：</span>
-                        <span class="text_right">4</span>
+                        <span class="text_left">保修期：</span>
+                        <span class="text_right">过保</span>
                     </div>
                     <div class="formList"></div>
                     <div class="formList">
-                        <span class="text_left">销售：</span>
-                        <span class="text_right">李茂旭  13565733388</span>
+                        <span class="text_left">区位：</span>
+                        <span class="text_right">1#车间   机加线</span>
                     </div>
                     <div class="formList">
-                        <span class="text_left">技术支持：</span>
-                        <span class="text_right">周永飞  13030227482</span>
+                        <span class="text_left">本月负荷：</span>
+                        <span class="text_right">62.4%</span>
+                    </div>
+                    <div class="formList">
+                        <span class="text_left">报修次数：</span>
+                        <span class="text_right">3</span>
+                    </div>
+                    <div class="formList">
+                        <span class="text_left">累计电量：</span>
+                        <span class="text_right">566.1<span class="unit">千万/时</span></span>
+                        
+                    </div>
+                </el-col>
+                <el-col :span="12">
+                    <div class="partment">
+                        <div class="part_1 one">
+                            <img src="@/assets/img/device_img.png" alt="">
+                            <p class="zll-botton run part-nav">运 行</p>
+                        </div>
+                        <div class="part_1">
+                            <div class="formList">
+                                <div class="zll-botton run">运行</div>
+                                <div class="num">
+                                    <span class="run">1133.2</span>
+                                    <span class="hours">小时</span>
+                                </div>
+                            </div>
+                            <div class="formList">
+                                <div class="zll-botton stop">停机</div>
+                                <div class="num">
+                                    <span class="stop">46.1</span>
+                                    <span class="hours">小时</span>
+                                </div>
+                            </div>
+                            <div class="formList">
+                                <div class="zll-botton bj">报警</div>
+                                <div class="num">
+                                    <span class="bj">12.3</span>
+                                    <span class="hours">小时</span>
+                                </div>
+                            </div>
+                            <div class="formList">
+                                <div class="zll-botton gj">关机</div>
+                                <div class="num">
+                                    <span class="gj">8.1</span>
+                                    <span class="hours">小时</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearBoth"></div>
+                    </div>
+                    
+                    <div class="tableList">
+                        <table border="1">
+                            <tr>
+                                <td>时间戳</td>
+                                <td><p>{{ tableData.table1 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>程序名</td>
+                                <td><p>{{ tableData.table2 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>当前刀具</td>
+                                <td><p>{{ tableData.table3 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>机械坐标</td>
+                                <td><p>{{ tableData.table4 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>主轴转速</td>
+                                <td><p>{{ tableData.table5 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>主轴倍率</td>
+                                <td><p>{{ tableData.table6 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>主轴负载</td>
+                                <td><p>{{ tableData.table7 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>进给速度</td>
+                                <td><p>{{ tableData.table8 }}</p></td>
+                            </tr>
+                            <tr>
+                                <td>进给倍率</td>
+                                <td><p>{{ tableData.table9 }}</p></td>
+                            </tr>
+                        </table>
                     </div>
                 </el-col>
             </el-row>
-            <div class="tableList">
-                <table border="1">
-                    <tr>
-                        <th>设备名称</th><th>设备型号</th><th>设备编码</th><th>授权日期</th><th>保修状态</th><th>运行 h</th><th>停机 h</th><th>报警 h</th><th>关机 h</th><th>当前状态</th>
-                    </tr>
-                    <tr class="add_Table" v-for="(item, index) in tableData"  :key="index">
-                        <td><p>{{ item.table1 }}</p></td>
-                        <td><p>{{ item.table2 }}</p></td>
-                        <td><p>{{ item.table3 }}</p></td>
-                        <td><p>{{ item.table4 }}</p></td>
-                        <td :class="{'bxzt': item.table5 == '过保'}"><p>{{ item.table5 }}</p></td>
-                        <td class="runtxt"><p>{{ item.table6 }}</p></td>
-                        <td class="stoptxt"><p>{{ item.table7 }}</p></td>
-                        <td class="bjtxt"><p>{{ item.table8 }}</p></td>
-                        <td class="gjtxt"><p>{{ item.table9 }}</p></td>
-                        <td class="state">
-                            <p v-if="item.table10 == '运行'" class="zll-botton run">运行</p>
-                            <p v-if="item.table10 == '停机'" class="zll-botton stop">停机</p>
-                            <p v-if="item.table10 == '报警'" class="zll-botton bj">报警</p>
-                            <p v-if="item.table10 == '关机'" class="zll-botton gj">关机</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
         </div>
     </div>
 </template>
@@ -85,73 +134,17 @@
 export default {
     data(){
         return {
-            tableData: [{
-                table1: '车削加工中心',
-                table2: 'KDVL320H',
-                table3: 'KVDL21030012',
-                table4: '2021-03-28',
-                table5: '在保',
-                table6: '1332.8',
-                table7: '107.3',
-                table8: '12.2',
-                table9: '54.3',
-                table10: '运行',
-            }, {
-                table1: '车削加工中心',
-                table2: 'KDVL320H',
-                table3: 'KVDL21030003',
-                table4: '2021-03-28',
-                table5: '在保',
-                table6: '1332.8',
-                table7: '107.3',
-                table8: '12.2',
-                table9: '54.3',
-                table10: '停机',
-            }, {
-                table1: '普通立车',
-                table2: 'KDVM21030004',
-                table3: 'KVDL21030003',
-                table4: '2021-03-28',
-                table5: '在保',
-                table6: '1332.8',
-                table7: '107.3',
-                table8: '12.2',
-                table9: '54.3',
-                table10: '报警',
-            }, {
-                table1: '钻攻中心',
-                table2: 'KDVL320H',
-                table3: 'KVDL21030010',
-                table4: '2021-03-28',
-                table5: '在保',
-                table6: '',
-                table7: '',
-                table8: '',
-                table9: '',
-                table10: '',
-            }, {
-                table1: '立式龙门铣',
-                table2: 'KDVL320H',
-                table3: 'KVDL21030010',
-                table4: '2021-03-28',
-                table5: '在保',
-                table6: '1332.8',
-                table7: '107.3',
-                table8: '12.2',
-                table9: '54.3',
-                table10: '关机',
-            }, {
-                table1: '立式龙门铣',
-                table2: 'KDVL320H',
-                table3: 'KVDL21030010',
-                table4: '2021-03-28',
-                table5: '过保',
-                table6: '1332.8',
-                table7: '107.3',
-                table8: '12.2',
-                table9: '54.3',
-                table10: '关机',
-            }]
+            tableData: {
+                table1: '2020-12-15 13:33:01',
+                table2: 'SD18W',
+                table3: '钛合金T60铣刀',
+                table4: '344.291，-163.722，-327.211',
+                table5: '0',
+                table6: '60',
+                table7: '0',
+                table8: '0',
+                table9: '70',
+            }
         }
     },
     methods: {
@@ -169,28 +162,48 @@ export default {
     .UserAdd {
         .formList {
             margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
             .zll-botton {
-                width: 100px;
+                width: 50%;
                 margin-bottom: 16px;
                 height: 26px;
                 line-height: 13px;
                 margin-left: 0;
                 float: left;
             }
+            .unit {
+                color: #999999;
+                margin-left: 10px;
+            }
             .num {
                 float: left;
-                margin-left: 15px;
-                &.run {
+                display: flex;
+                width: 50%;
+                .hours {
+                    color: #999999;
+                    margin-left: 10px;
+                    width: 30px;
+                }
+                .run {
                     color: #67C23A;
+                    width: calc(100% - 30px);
+                    text-align: right;
                 }
-                &.stop {
+                .stop {
                     color: #e6a23c;
+                    width: calc(100% - 30px);
+                    text-align: right;
                 }
-                &.bj {
+                .bj {
                     color: #f56c6c;
+                    width: calc(100% - 30px);
+                    text-align: right;
                 }
-                &.gj {
+                .gj {
                     color: #909399;
+                    width: calc(100% - 30px);
+                    text-align: right;
                 }
             }
         }
@@ -215,6 +228,28 @@ export default {
                     width: 80%;
                     height: 26px;
                     line-height: 13px;
+                }
+            }
+        } 
+        .partment {
+            .part_1 {
+                width: 50%;
+                float: left;
+                &.one {
+                    padding: 0 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        height: 110px;
+                        width: 140px;
+                        margin-bottom: 15px;
+                    }
+                    .part-nav.zll-botton {
+                        height: 26px;
+                        line-height: 13px;
+                        width: 140px;
+                    }
                 }
             }
         }
