@@ -24,6 +24,16 @@ $baseColor: #1890ff;
         .el-select {
             width: 100%
         }
+        .text_left {
+            width: 80px;
+            text-align: right;
+            font-size: 12px;
+            float: left;
+        }
+        .text_right {
+            float: left;
+            width: calc(100% - 80px)
+        }
     }
     .NOnum {
         margin-top: 15px;

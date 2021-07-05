@@ -1,0 +1,44 @@
+{
+  "id": "2020317",
+  "name": "icon",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17814511",
+      "name": "实时负荷",
+      "font_class": "shishifuhe",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "13263043",
+      "name": "负荷",
+      "font_class": "fuhe",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "4229440",
+      "name": "客户",
+      "font_class": "kehu",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "18067724",
+      "name": "系统管理",
+      "font_class": "xitongguanli",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "20001345",
+      "name": "通知",
+      "font_class": "ziyuan8",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    }
+  ]
+}

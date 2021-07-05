@@ -30,6 +30,13 @@ li{
 .clearBoth {
     clear: both;
 }
+.page_title_h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #34bfc6;
+    letter-spacing: 5px;
+}
 //左侧导航栏样式
 .zll-Menu {
     .el-menu {
@@ -85,7 +92,8 @@ li{
         padding-left: 20px !important;
         font-size: 14px;
         i {
-            color: #fff
+            color: #fff;
+            margin-right: 8px;
         }
         &:hover {
             // background: #297e8d;
@@ -100,12 +108,18 @@ li{
             padding-left: 20px !important;
         }
     }
+    .el-submenu__title {
+        i {
+            margin-right: 8px;
+        }
+    }
     .el-menu-item.is-active {
         color: #fff;
         background: #1374c0;
         opacity: 1;
         i {
-            filter: drop-shadow(#00C 0px 0);
+            color: #34bfc6;
+            
         }
     }
     .color1.el-menu {
@@ -356,8 +370,9 @@ li{
         font-size: 12px;
     }
     .el-table th.is-leaf {
-        color: #ffffff;
-        background: #a6a6a6 !important;
+        color: #333;
+        font-weight: 600;
+        background: #a4c6ea !important;
     }
     .el-table td, .el-table th {
         padding: 2px 0;
@@ -365,7 +380,7 @@ li{
         font-weight: 400;
         height: 26px;
         line-height: 26px;
-        background: #F2F2F2;
+        background: #ffffff;
         border-color: #ffffff;
     }
     .el-table .caret-wrapper {
@@ -376,6 +391,24 @@ li{
     }
     .el-table .sort-caret.descending {
         bottom: 4px;
+    }
+    .el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left~.el-table__fixed {
+        border-right: none;
+    }
+    .el-table--striped .el-table__body tr.el-table__row--striped td {
+        background: #f5f7fb;
+    }
+    .el-table .sort-caret.descending {
+        border-top-color: #ffffff;
+    }
+    .el-table .sort-caret.ascending {
+        border-bottom-color: #ffffff;
+    }
+    .ascending .sort-caret.ascending {
+        border-bottom-color: #409EFF;
+    }
+    .descending .sort-caret.descending {
+        border-top-color: #409EFF;
     }
 }
 //弹框样式
@@ -502,6 +535,18 @@ li{
     }
     &.download {
         background-color: #67C23A !important;
+    }
+    &.run {
+        background-color: #67C23A;
+    }
+    &.stop {
+        background-color: #e6a23c;
+    }
+    &.bj {
+        background-color: #f56c6c;
+    }
+    &.gj {
+        background-color: #909399;
     }
 }
 .powerTable {

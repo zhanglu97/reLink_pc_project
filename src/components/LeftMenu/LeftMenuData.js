@@ -2,12 +2,19 @@
 export default [
     {
         name: 'FirstPage',//路由name
-        title: '信息公告',
-        icon: 'el-icon-s-comment',
-        imgSrc: require('../../assets/img/icon1.png'),
+        title: '通知公告',
+        icon: 'iconziyuan8',
+    }, {
+        name: 'CustomerOverview',//路由name
+        title: '客户总览',
+        icon: 'iconkehu',
+    }, {
+        name: 'LoadIndex',//路由name
+        title: '负荷指数',
+        icon: 'iconshishifuhe',
     }, {
         title: '系统设置',
-        imgSrc: require('../../assets/img/icon5.png'),
+        icon: 'iconxitongguanli',
         children: [ //子菜单
 //          {
 //              name: 'Send',//路由name

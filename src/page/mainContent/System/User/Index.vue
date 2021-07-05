@@ -1,6 +1,6 @@
 <template>
     <div class="User">
-        <h1 :style="{color:$store.state.colorData.top.topBgColor}">用户管理</h1>
+        <h2 class="page_title_h2">用户管理</h2>
         <!-- 头部搜索 -->
         <div class="Search_Top_Input">
             <div class="search_list" style="width: calc(100% - 200px) !important">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 			<div class="addNew" style="width: 200px !important">
-                <span @click="addUser()"><i class="el-icon-circle-plus-outline"></i> 新建用户</span>
+                <span @click="addUser()"><i class="el-icon-circle-plus-outline"></i> 新增用户</span>
                 <span class="delete" @click="batchCancal"><i class="el-icon-delete"></i> 批量删除</span>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
             </template>
         </sys-table>
         
-        <!-- 新建管理用户弹框 -->
+        <!-- 新增管理用户弹框 -->
         <div class="zll-dialog">
             <popout :title="'用户 · ' + title" :visible.sync="addDialog" v-if="addDialog" >
                 <Add ref="add" slot="content" @addForm="getFormData"></Add>
@@ -111,7 +111,7 @@
                 },500)
             },
             addUser(){
-                this.title = '新建'
+                this.title = '新增'
                 this.addDialog = true
             },
             getFormData(data){
@@ -169,32 +169,4 @@
 
 <style lang="scss" scoped>
 @import "@/assets/style/SearchTop.scss";
-.User{
-    h1 {
-        text-align: center;
-        color: #34bfc6;
-        font-size: 20px;
-        font-weight: normal;
-        position: relative;
-        width: 100px;
-        margin: 0 auto;
-        padding-bottom: 10px;
-        .line1 {
-            width: 30px;
-            height: 1px;
-            position: absolute;
-            left: -40px;
-            top: 14px;
-            background:  #34bfc6;
-        }
-        .line2 {
-            width: 30px;
-            height: 1px;
-            position: absolute;
-            right: -40px;
-            top: 14px;
-            background:  #34bfc6;
-        }
-    }
-}
 </style>

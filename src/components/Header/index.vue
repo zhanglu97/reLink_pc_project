@@ -2,7 +2,7 @@
     <div class="header" :style="{backgroundColor:$store.state.colorData.top.topBgColor,color:$store.state.colorData.top.topFontColor}">
         <div class="Title_header" :style="{backgroundColor:$store.state.colorData.top.topBgColor,color:$store.state.colorData.top.topFontColor}" >
             <div class="head_logo_img">
-            	<img class="Roms" src="@/assets/img/Login_logo2.png" />
+            	<img class="Roms" src="@/assets/img/relink_logo.png" />
             </div>
             <span class="splite">|</span> 睿采智连 · 数字化运营平台
         </div>
@@ -12,9 +12,9 @@
         </div>
         <!-- 右侧按钮 -->
         <div class="header_user" :style="{backgroundColor:$store.state.colorData.top.topBgColor,color:$store.state.colorData.top.topFontColor}">
-            <div class="headalist"  @click="showTheme = true">
+            <!-- <div class="headalist"  @click="showTheme = true">
                 <span class="changeColor" title="切换主题"><i class="el-icon-orange"></i></span>
-            </div>
+            </div> -->
             <div class="headalist headLayout">
                 <span>{{ userInfo }} <i class="el-icon-caret-bottom"></i></span>
                 <div class="mouseHoverParent">
@@ -82,7 +82,7 @@
         components:{ colorPopout, password, addLabel },
         data(){
 			return {
-			    menuList:[{name:'信息公告',routeName:'FirstPage'}],
+			    menuList:[{name:'通知公告',routeName:'FirstPage'}],
                 showTheme:false, //主题弹框显示
                 addDialog: false,
                 resetDialog: false,
@@ -126,7 +126,7 @@
                 this.menuList.splice(index, 1);
             },
             closeAll(){//关闭全部标签
-                this.menuList= [{name:'信息公告',routeName:'FirstPage'}]
+                this.menuList= [{name:'通知公告',routeName:'FirstPage'}]
                 this.goPage('FirstPage');
             },
             closeNow(){ //关闭当前标签
@@ -145,7 +145,7 @@
                         if(this.menuList[i].routeName == this.$route.name) {
                             this.menuList= [
                                 {
-                                    name:'信息公告',routeName:'FirstPage'
+                                    name:'通知公告',routeName:'FirstPage'
                                 },{
                                     name:this.$route.meta.title,routeName:this.$route.name
                                 }

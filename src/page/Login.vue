@@ -6,6 +6,19 @@
 				<i></i>
 				睿采智连
 			</h3>
+            <div class="header_top_title">
+                <span>睿采智连</span>
+                <span class="split">/</span>
+                <span>ReLink</span>
+                <span class="split">/</span>
+                <span>注册</span>
+                <span class="split">/</span>
+                <span>登录</span>
+                <span class="split">/</span>
+                <span>忘记密码</span>
+                <span class="split">/</span>
+                <span>联系我们</span>
+            </div>
 		</div>
 		<div class="device_img">
 			<img src="@/assets/img/Login_device.png"/>
@@ -132,7 +145,8 @@
 			height: 60px;
 			line-height: 60px;
 			color: #e31d1a;
-			background: #ffffff;
+			background: rgba(255, 255, 255, .8);
+            position: relative;
 			h3 {
 				width: 100%;
 				margin: 0 auto;padding: 0 170px;
@@ -142,7 +156,6 @@
                 font-family: SimHei;
 			}
 			span {
-				font-size: 14px;
 				font-weight: 400;
 				float: right;
 			}
@@ -151,6 +164,16 @@
 				top: 14px;
                 left: 100px;
 			}
+            .header_top_title {
+                position: absolute;
+                right: 10px;
+                top: 0;
+                color: #666;
+                font-size: 12px;
+                .split {
+                    margin: 0 10px;
+                }
+            }
 		}
 		.device_img {
 			position: absolute;
@@ -164,7 +187,7 @@
 			width: 400px;
 			position: absolute;
     		right: 10%;
-			top: 25vh;
+			top: 30vh;
 			height: 250px;
 			background-color: rgba(255, 255, 255, 1);
             box-shadow: 0 0 20px #34bfc6;    

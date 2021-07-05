@@ -1,5 +1,6 @@
 <template>
     <div class="FirstPage">
+        <h2 class="page_title_h2">通知公告</h2>
         <div class="message">
             <div class="listNav" v-for="(item,index) in list" :key="index" :class="{ 'isread': !item.isread }" @click="goDetail">
                 <el-row class="item">

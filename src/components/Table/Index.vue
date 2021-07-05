@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="Table_body zll-table" v-loading="loading">
-            <el-table border style="width: 100%" tooltip-effect="dark" 
+            <el-table border style="width: 100%" tooltip-effect="dark"  stripe
                 :data="getTableData" 
                 @selection-change="handleSelect"
                 :cell-style="cellStyle"
@@ -142,29 +142,17 @@
             cellStyle({ row, column, rowIndex, columnIndex }) {
                 let name = column.property;
                 let color = { backgroundColor: "", color: "", };
-                if ( name == "data6") { //标准管理——质量标准——状态
-                    if (row.data6 == '停用') {
-                        color.color = "#e82626";
-                    }
+                if ( name == "runNum") { //客户总览——运行数
+                    color.color = "#67c23a";
                 }
-                if ( name == "data8") { //准入申请——申请管理——状态
-                    if (row.data8 == '待申请' || row.data8 == '驳回' || row.data8 == '未提交') {
-                        color.color = "#e82626";
-                    }
-                    if (row.data8 == '合格') {
-                        color.color = "#34bfc6";
-                    }
+                if ( name == "stopNUm") { //客户总览——停机数
+                    color.color = "#e6a23c";
                 }
-                if ( name == "data9") { //审计——供应商——合格供应商
-                    if (row.data9 == '有效') {
-                        color.color = "#409EFF";
-                    }
-                    if (row.data9 == '已过期') {
-                        color.color = "#e82626";
-                    }
-                    if (row.data9 == '即将过期') {
-                        color.color = "#E6A23C";
-                    }
+                if ( name == "alarmNum") { //客户总览——报警
+                    color.color = "#f56c6c";
+                }
+                if ( name == "gjNum") { //客户总览——关机
+                    color.color = "#909399";
                 }
                 return color;
             },

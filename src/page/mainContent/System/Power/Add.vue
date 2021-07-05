@@ -50,16 +50,16 @@
                 },{
                     mainTitle: '准入申请',
                     children: [{
-                        subtitle: '新建申请',
+                        subtitle: '新增申请',
                         content: [
-                            { title: '新建', value: '新建申请新建' },
-                            { title: '保存', value: '新建申请保存' },
-                            { title: '提交', value: '新建申请提交' }
+                            { title: '新增', value: '新增申请新增' },
+                            { title: '保存', value: '新增申请保存' },
+                            { title: '提交', value: '新增申请提交' }
                         ],
                     },{
                         subtitle: '申请管理',
                         content: [
-                            { title: '删除', value: '申请管理新建' },
+                            { title: '删除', value: '申请管理新增' },
                             { title: '查看', value: '申请管理查看' },
                             { title: '编辑', value: '申请管理编辑' },
                             { title: '作废', value: '申请管理作废' }
@@ -96,14 +96,14 @@
                     }, {
                         subtitle: '年度计划',
                         content: [
-                            { title: '新建', value: '年度计划新建' },
+                            { title: '新增', value: '年度计划新增' },
                             { title: '查看', value: '年度计划查看' },
                             { title: '编辑', value: '年度计划编辑' }
                         ],
                     }, {
                         subtitle: '质量回顾',
                         content: [
-                            { title: '新建', value: '质量回顾新建' },
+                            { title: '新增', value: '质量回顾新增' },
                             { title: '查看', value: '质量回顾查看' },
                             { title: '编辑', value: '质量回顾编辑' }
                         ],
@@ -143,13 +143,13 @@
                     }, {
                         subtitle: '稳定性考察',
                         content: [
-                            { title: '新建', value: '稳定性考察新建' },
+                            { title: '新增', value: '稳定性考察新增' },
                             { title: '考察', value: '稳定性考察考察' },
                         ],
                     },{
                         subtitle: '留样考察',
                         content: [
-                            { title: '新建', value: '留样考察新建' },
+                            { title: '新增', value: '留样考察新增' },
                             { title: '编辑', value: '留样考察编辑' },
                             { title: '查看', value: '留样考察查看' },
                             { title: '考察', value: '留样考察考察' },
@@ -171,7 +171,7 @@
                     children: [{
                         subtitle: '信息发布',
                         content: [
-                            { title: '新建', value: '信息发布新建' },
+                            { title: '新增', value: '信息发布新增' },
                             { title: '删除', value: '信息发布删除' },
                         ],
                     },{
@@ -179,14 +179,14 @@
                     },{
                         subtitle: '质量标准',
                         content: [
-                            { title: '新建', value: '质量标准新建' },
+                            { title: '新增', value: '质量标准新增' },
                             { title: '查看', value: '质量标准查看' },
                             { title: '修订', value: '质量标准修订' },
                         ],
                     },{
                         subtitle: '资质名称',
                         content: [
-                            { title: '新建', value: '资质名称新建' },
+                            { title: '新增', value: '资质名称新增' },
                             { title: '编辑', value: '资质名称编辑' },
                         ],
                     }]
@@ -195,18 +195,18 @@
                     children: [{
                         subtitle: '组织架构',
                         content: [
-                            { title: '新建', value: '组织架构新建' },
+                            { title: '新增', value: '组织架构新增' },
                         ],
                     },{
                         subtitle: '角色权限',
                         content: [
-                            { title: '新建', value: '角色权限新建' },
+                            { title: '新增', value: '角色权限新增' },
                             { title: '编辑', value: '角色权限编辑' },
                         ],
                     },{
                         subtitle: '用户管理',
                         content: [
-                            { title: '新建', value: '用户管理新建' },
+                            { title: '新增', value: '用户管理新增' },
                             { title: '编辑', value: '用户管理编辑' },
                             { title: '删除', value: '用户管理删除' },
                         ],

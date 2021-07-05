@@ -12,9 +12,12 @@
         font-size: 18px;
         box-sizing: border-box;
         float: left;
-        width: calc(100% - 380px);
+        width: calc(100% - 400px);
         padding-left: 5px;
         font-family: SimHei;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         .splite {
             padding: 0 10px;
         }
