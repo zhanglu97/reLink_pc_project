@@ -92,18 +92,15 @@ function Email(rule, value, callback) { //邮箱
         }
     }
 }
-function linkMan(rule, value, callback) { //联系人 ≤4个汉字 / ≤10字母
+function linkMan(rule, value, callback) { //联系人 ≤5个汉字 
     if (!value) {
         return callback(new Error('请输入联系人'));
     } else {
         const reg = /[\u4e00-\u9fa5]/g
-        const reg2 = /^[a-zA-Z]/;
-        if (reg.test(value) && value.length < 5) {
-            callback();
-        } else if (reg2.test(value) && value.length < 11) {
+        if (reg.test(value) && value.length < 6) {
             callback();
         } else {
-            return callback(new Error('联系人为4字以内汉字 或10字以内英文字母'));
+            return callback(new Error('联系人为5字以内汉字'));
         }
     }
 }
@@ -140,6 +137,55 @@ function number(rule, value, callback) {
     }
     
 }
+function userId(rule, value, callback) {
+    if (!value) {
+        return callback(new Error('请输入账号'));
+    } else {
+        if (value && (!(/^[0-9a-z]{12}$/).test(value))) {
+            return callback(new Error('请输入12位小写英文字母、数字，'))
+        } else {
+            return callback()
+        }
+    }
+    
+}
+function password(rule, value, callback) {
+    if (!value) {
+        return callback(new Error('请输入密码'));
+    } else {
+        if (value && (!(/^[0-9a-zA-Z]{6,12}$/).test(value))) {
+            return callback(new Error('请输入6-12位大小写字母、数字'))
+        } else {
+            return callback()
+        }
+    }
+    
+}
+//*************新增品类**********
+function CategoryName(rule, value, callback) {    // 品类名称 ≤10个汉字 
+    if (!value) {
+        return callback(new Error('请输入品类名称'));
+    } else {
+        const reg = /[\u4e00-\u9fa5]/g
+        if (reg.test(value) && value.length < 11) {
+            callback();
+        } else {
+            return callback(new Error('请输入为10字以内汉字'));
+        }
+    }
+}
+function CategoryNum(rule, value, callback) {// 前置编码 仅限字母、数字、或组合 
+    if (!value) {
+        return callback(new Error('请输入前置编码'));
+    } else {
+        if (value && (!(/^[0-9a-zA-Z]$/).test(value))) {
+            return callback(new Error('请输入字母、数字或组合'))
+        } else {
+            return callback()
+        }
+    }
+    
+}
 export { //很关键
-    supplier, hutchet, checkPhone, checkTel, bank, Email, bankNum, Account, linkMan, idCard, Name, number
+    supplier, hutchet, checkPhone, checkTel, bank, Email, bankNum, Account, linkMan, idCard, Name, number,userId,password,CategoryName,CategoryNum
 }

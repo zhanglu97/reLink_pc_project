@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13906655",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5510564",
+      "name": "备件",
+      "font_class": "beijian",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "18824540",
+      "name": "报警 警告 预警 警告灯",
+      "font_class": "alert",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    },
+    {
       "icon_id": "7461695",
       "name": "云盘",
       "font_class": "yunpan",

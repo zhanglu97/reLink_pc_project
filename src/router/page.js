@@ -1,6 +1,7 @@
 import FirstPage from '@/page/mainContent/Firstpage/Index' //通知公告
 //**************系统管理**************
 import Send from '@/page/mainContent/System/Send/Index' //信息发布
+import BasicData from '@/page/mainContent/System/BasicData/Index' //系统管理——基础数据
 import Organization from '@/page/mainContent/System/Organization/Index' //系统管理——组织架构
 import User from '@/page/mainContent/System/User/Index' //系统管理——用户管理
 import Power from '@/page/mainContent/System/Power/Index' //系统管理——角色权限
@@ -12,6 +13,12 @@ import CustomerOverview from '@/page/mainContent/CustomerOverview/Index' //客�
 import LoadIndex from '@/page/mainContent/LoadIndex/Index' //负荷指数
 //**************云服务**************
 import CloudService from '@/page/mainContent/CloudService/Index' //云服务
+//**************报警记录**************
+import AlarmRecord from '@/page/mainContent/AlarmRecord/Index' //报警记录
+//**************备件管理**************
+import SparePartManage from '@/page/mainContent/SparePartManage/Index' //备件管理
+//**************注册授权**************
+import RegisterImpower from '@/page/mainContent/RegisterImpower/Index' //注册授权
 
 // **************登录后访问的路由**********
 export default [
@@ -65,5 +72,25 @@ export default [
         name: 'CloudService',
         meta: {title: '云服务'},
         component: CloudService
-    }, 
+    }, {
+        path: 'AlarmRecord',
+        name: 'AlarmRecord',
+        meta: {title: '报警记录'},
+        component: AlarmRecord
+    }, {
+        path: 'SparePartManage',
+        name: 'SparePartManage',
+        meta: {title: '备件管理'},
+        component: SparePartManage
+    }, {
+        path: 'RegisterImpower',
+        name: 'RegisterImpower',
+        meta: {title: '注册授权'},
+        component: RegisterImpower
+    }, {
+        path: 'BasicData',
+        name: 'BasicData',
+        meta: {title: '基础数据'},
+        component: BasicData
+    },
 ]

@@ -154,6 +154,24 @@
                 if ( name == "gjNum") { //客户总览——关机
                     color.color = "#909399";
                 }
+                if ( name == "tableNum7") { //云服务——我的服务——状态
+                    if(row.tableNum7 == '未处理') {
+                        color.color = "#f44336"
+                    };
+                }
+                if ( name == "tableNum8") { //云服务——我的服务——响应速度
+                    if(row.tableNum8 == '超时') {
+                        color.color = "#f44336"
+                    };
+                }
+                if ( name == "alarmdm") { //报警记录——报警代码
+                    color.color = "#f44336"
+                }
+                if( name == 'ImpowerState') {//注册授权——设备授权——授权状态
+                    if(row.ImpowerState == '未授权') {
+                        color.color = "#f44336"
+                    };
+                }
                 return color;
             },
             getSummaries(param) {

@@ -319,7 +319,7 @@ export default {
 }
 .longSize {
     .popout-main {
-        width: 70%;
+        width: 60%;
         left: 15%;
     }
 }

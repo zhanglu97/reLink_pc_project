@@ -1,37 +1,25 @@
 <template>
-    <div class="CloudService">
-        <h2 class="page_title_h2">云服务</h2>
+    <div class="RegisterImpower">
+        <h2 class="page_title_h2">注册授权</h2>
         <div class="nav_tab">
-            <el-badge :value="value1" :max="99" class="item">
-                <div @click="getshow(1)" :class="{active:shows == 1}" class="MenuList left">我的服务</div>
-            </el-badge>
-            <el-badge :value="value2" :max="99" class="item">
-                <div @click="getshow(2)" :class="{active:shows == 2}" class="MenuList middle">服务中心</div>
-            </el-badge>
-            <el-badge :value="value3" :max="99" class="item">
-                <div @click="getshow(3)" :class="{active:shows == 3}" class="MenuList right">统计查询</div>
-            </el-badge>
+            <div @click="getshow(1)" :class="{active:shows == 1}" class="MenuList left">客户注册</div>
+            <div @click="getshow(2)" :class="{active:shows == 2}" class="MenuList middle">设备授权</div>
             <div class="clearBoth"></div>
         </div>
         <div class="CloudService-body">
-            <MineService v-if="shows == 1"></MineService>
-            <ServiceCenter v-if="shows == 2"></ServiceCenter>
-            <StatisticSearch v-if="shows == 3"></StatisticSearch>
+            <ClientRegister v-if="shows == 1"></ClientRegister>
+            <DeviceImpower v-if="shows == 2"></DeviceImpower>
         </div>
     </div>
 </template>
 
 <script>
-import MineService from './MineService/Index'
-import ServiceCenter from './ServiceCenter/Index'
-import StatisticSearch from './StatisticSearch/Index'
+import ClientRegister from './ClientRegister/Index'
+import DeviceImpower from './DeviceImpower/Index'
 export default {
     data() {
         return {
             shows: 1,
-            value1: 1,
-            value2: 1,
-            value3: 0,
         }
     },
     methods:{
@@ -40,15 +28,14 @@ export default {
         },
     },
     components: {
-        MineService,
-        ServiceCenter,
-        StatisticSearch,
+        ClientRegister,
+        DeviceImpower,
     }
 };
 </script>
 
 <style lang="scss" scoped>
-.CloudService {
+.RegisterImpower {
     margin: 0 auto;
     width: 100%;margin-bottom: 15px;
     border-bottom: 0;
@@ -56,7 +43,7 @@ export default {
         position: relative;
         &::after {
             content: ' ';
-            width: calc(100% - 585px);
+            width: calc(100% - 385px);
             height: 1px;
             background: #e6e6e6;
             position: absolute;

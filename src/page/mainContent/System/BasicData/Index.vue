@@ -1,37 +1,29 @@
 <template>
-    <div class="CloudService">
-        <h2 class="page_title_h2">云服务</h2>
+    <div class="BasicData">
+        <h2 class="page_title_h2">基础数据</h2>
         <div class="nav_tab">
-            <el-badge :value="value1" :max="99" class="item">
-                <div @click="getshow(1)" :class="{active:shows == 1}" class="MenuList left">我的服务</div>
-            </el-badge>
-            <el-badge :value="value2" :max="99" class="item">
-                <div @click="getshow(2)" :class="{active:shows == 2}" class="MenuList middle">服务中心</div>
-            </el-badge>
-            <el-badge :value="value3" :max="99" class="item">
-                <div @click="getshow(3)" :class="{active:shows == 3}" class="MenuList right">统计查询</div>
-            </el-badge>
+            <div @click="getshow(1)" :class="{active:shows == 1}" class="MenuList left">品类编码</div>
+            <div @click="getshow(2)" :class="{active:shows == 2}" class="MenuList middle">报警代码</div>
+            <div @click="getshow(3)" :class="{active:shows == 3}" class="MenuList ">行政区域</div>
+            <div @click="getshow(4)" :class="{active:shows == 4}" class="MenuList ">备份通知</div>
+            <div @click="getshow(5)" :class="{active:shows == 5}" class="MenuList ">检项</div>
+            <div @click="getshow(6)" :class="{active:shows == 6}" class="MenuList ">厂内区位</div>
             <div class="clearBoth"></div>
         </div>
-        <div class="CloudService-body">
-            <MineService v-if="shows == 1"></MineService>
-            <ServiceCenter v-if="shows == 2"></ServiceCenter>
-            <StatisticSearch v-if="shows == 3"></StatisticSearch>
+        <div class="BasicData-body">
+            <CategoryCoding v-if="shows == 1"></CategoryCoding>
+            <AlarmCode v-if="shows == 2"></AlarmCode>
         </div>
     </div>
 </template>
 
 <script>
-import MineService from './MineService/Index'
-import ServiceCenter from './ServiceCenter/Index'
-import StatisticSearch from './StatisticSearch/Index'
+import CategoryCoding from './CategoryCoding/Index'
+import AlarmCode from './AlarmCode/Index'
 export default {
     data() {
         return {
             shows: 1,
-            value1: 1,
-            value2: 1,
-            value3: 0,
         }
     },
     methods:{
@@ -40,36 +32,23 @@ export default {
         },
     },
     components: {
-        MineService,
-        ServiceCenter,
-        StatisticSearch,
+        CategoryCoding,
+        AlarmCode,
     }
 };
 </script>
 
 <style lang="scss" scoped>
-.CloudService {
+.BasicData {
     margin: 0 auto;
     width: 100%;margin-bottom: 15px;
     border-bottom: 0;
-    .nav_tab {
-        position: relative;
-        &::after {
-            content: ' ';
-            width: calc(100% - 585px);
-            height: 1px;
-            background: #e6e6e6;
-            position: absolute;
-            bottom: 0px;
-            right: -15px;
-        }
-    }
     .MenuList {
         height: 35px;
         line-height: 33px;
         float: left;
         text-align: center;
-        width: 200px;
+        width: 150px;
         background: #f7f7f7;
         color: #333;
         font-size: 14px;
@@ -111,7 +90,7 @@ export default {
         }
         
     }
-    .CloudService-body {
+    .BasicData-body {
         padding-top: 15px;
     }
 }

@@ -11,6 +11,7 @@ import sysTable from "@/components/Table/Index"; //表格组件
 import axios from 'axios'
 import echarts from 'echarts'
 import '@/assets/font_icon/iconfont.css';    // 引用 iconfont.css
+import VDistpicker from 'v-distpicker'
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI)
@@ -18,6 +19,7 @@ Vue.component('popout', popout);
 Vue.component('sysTable', sysTable);
 Vue.prototype.$axios = axios
 Vue.prototype.$echarts = echarts
+Vue.component('v-distpicker', VDistpicker)
 
 Vue.prototype.$goPage = true;//能否跳转
 

@@ -2,7 +2,7 @@
     <div class="addProject UserAdd">
         <div class="addForm zll-form">
             <el-row :gutter="20">
-                <el-col :span="12">
+                <el-col :span="10">
                     <div class="formList">
                         <span class="text_left">客户名称：</span>
                         <span class="text_right">上海远大精密股份有限公司</span>
@@ -46,7 +46,7 @@
                         
                     </div>
                 </el-col>
-                <el-col :span="12">
+                <el-col :span="14">
                     <div class="partment">
                         <div class="part_1 one">
                             <img src="@/assets/img/device_img.png" alt="">

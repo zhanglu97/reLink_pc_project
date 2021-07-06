@@ -1,28 +1,29 @@
 <template>
-    <div class="LoadIndex">
-        <h2 class="page_title_h2">负荷指数</h2>
+    <div class="AlarmRecord">
+        <h2 class="page_title_h2">报警记录</h2>
         <!-- 头部搜索 -->
         <div class="Search_Top_Input">
             <div class="search_list" style="width: calc(100%) !important">
                 <div class="input_flex">
-                    <el-input clearable v-model="searchInput1" placeholder="客户名称"></el-input>
+                    <el-input clearable v-model="searchInput1" placeholder="设备名称"></el-input>
                 </div>
                 <div class="input_flex">
-                    <el-input clearable v-model="searchInput2" placeholder="设备名称"></el-input>
+                    <el-input clearable v-model="searchInput2" placeholder="设备型号"></el-input>
                 </div>
                 <div class="input_flex">
-                    <el-input clearable v-model="searchInput3" placeholder="设备型号"></el-input>
+                    <el-input clearable v-model="searchInput3" placeholder="客户名称"></el-input>
                 </div>
                 <div class="input_flex">
-                    <el-select clearable v-model="searchInput4" placeholder="状态">
-                        <el-option label="运行" value="运行"></el-option>
-                        <el-option label="停机" value="停机"></el-option>
-                        <el-option label="报警" value="报警"></el-option>
-                        <el-option label="关机" value="关机"></el-option>
+                    <el-input clearable v-model="searchInput4" placeholder="报警代码"></el-input>
+                </div>
+                <div class="input_flex">
+                    <el-select clearable v-model="searchInput5" placeholder="代码类别">
+                        <el-option label="自定义" value="自定义"></el-option>
+                        <el-option label="系统" value="系统"></el-option>
                     </el-select>
                 </div>
                 <div class="input_flex">
-                    <el-date-picker v-model="searchInput5" type="daterange" range-separator="-" start-placeholder="开始日期" end-placeholder="结束日期"> </el-date-picker>
+                    <el-date-picker v-model="searchInput6" type="daterange" range-separator="-" start-placeholder="开始日期" end-placeholder="结束日期"> </el-date-picker>
                 </div>
                 <div class="input_flex search">
                     <span class="zll-search">搜索</span>
@@ -44,7 +45,7 @@
         
         <!-- 查看弹框 -->
         <div class="zll-dialog">
-            <popout title="设备数据" :visible.sync="detailDialog" v-if="detailDialog" class="longSize">
+            <popout title="报警数据" :visible.sync="detailDialog" v-if="detailDialog" class="longSize">
                 <detail ref="add" slot="content"></detail>
                 <template slot="bottom">
                     <p class="zll-botton" @click="detailDialog = false">确 定</p>
@@ -66,45 +67,36 @@
                 searchInput3: '',
                 searchInput4: '',
                 searchInput5: '',
+                searchInput6: '',
                 tableData: [{
                     tableNum1: '车削加工中心',//设备名称
                     tableNum2: 'KDVL320H',//设备型号
-                    tableNum3: 'KVDL21030012',//设备码
-                    tableNum4: '2021-03-28',//注册日期
-                    tableNum5: '上海远大',//客户名称
-                    tableNum6: '52.3%',//本月负荷
-                    runNum: '1332.8',//运行 h
-                    stopNUm: '107.3',//停机 h
-                    alarmNum: '12.2',//报警 h
-                    gjNum: '54.3',//关机 h
-                    nowState: '运行',//当前状态
+                    tableNum3: '2021-03-28',//注册日期
+                    tableNum4: '上海远大精密股份有限公司',//客户名称
+                    tableNum5: '2021-05-06 13:33:41',//报警日期
+                    alarmdm: '4001',//报警代码
+                    tableNum7: '自定义',//代码类别
+                    tableNum8: '自消',//处理方式
                 }, {
                     tableNum1: '车削加工中心',//设备名称
                     tableNum2: 'KDVL320H',//设备型号
-                    tableNum3: 'KVDL21030012',//设备码
-                    tableNum4: '2021-02-28',//注册日期
-                    tableNum5: '苏州力拓',//客户名称
-                    tableNum6: '52.3%',//本月负荷
-                    runNum: '1332.8',//运行 h
-                    stopNUm: '107.3',//停机 h
-                    alarmNum: '12.2',//报警 h
-                    gjNum: '54.3',//关机 h
-                    nowState: '运行',//当前状态 h
+                    tableNum3: '2021-02-28',//注册日期
+                    tableNum4: '苏州力拓合金科技有限公司',//客户名称
+                    tableNum5: '2021-05-01 13:33:41',//报警日期
+                    alarmdm: '03',//报警代码
+                    tableNum7: '系统',//代码类别
+                    tableNum8: '售后',//处理方式
                 }, {
                     tableNum1: '车削加工中心',//设备名称
                     tableNum2: 'KDVL320H',//设备型号
-                    tableNum3: 'KVDL21030012',//设备码
-                    tableNum4: '2021-03-29',//注册日期
-                    tableNum5: '浙江吉利',//客户名称
-                    tableNum6: '66.1%',//本月负荷
-                    runNum: '1332.8',//运行 h
-                    stopNUm: '107.3',//停机 h
-                    alarmNum: '12.2',//报警 h
-                    gjNum: '54.3',//关机 h
-                    nowState: '运行',//当前状态 h
+                    tableNum3: '2021-04-8',//注册日期
+                    tableNum4: '苏州力拓合金科技有限公司',//客户名称
+                    tableNum5: '2021-04-22 13:33:41',//报警日期
+                    alarmdm: '80',//报警代码
+                    tableNum7: '系统',//代码类别
+                    tableNum8: '',//处理方式
                 },],
                 tableHeader:[],
-                addDialog: false, //用户弹框
                 detailDialog: false,
             }
         },
@@ -113,17 +105,14 @@
                 this.tableLoading = true;
                 setTimeout(()=>{
                     this.tableHeader =  [
-                        {"columnValue": "tableNum1", "columnName": "设备名称",width: 120 },
+                        {"columnValue": "tableNum1", "columnName": "设备名称" },
                         {"columnValue": "tableNum2", "columnName": "设备型号" },
-                        {"columnValue": "tableNum3", "columnName": "设备码" },
-                        {"columnValue": "tableNum4", "columnName": "注册日期",width: 120,isSortable: true },
-                        {"columnValue": "tableNum5", "columnName": "客户名称" },
-                        {"columnValue": "tableNum6", "columnName": "本月负荷" },
-                        {"columnValue": "runNum", "columnName": "运行 h" },
-                        {"columnValue": "stopNUm", "columnName": "停机 h" },
-                        {"columnValue": "alarmNum", "columnName": "报警 h" },
-                        {"columnValue": "gjNum", "columnName": "关机 h" },
-                        {"columnValue": "nowState", "columnName": "当前状态" },
+                        {"columnValue": "tableNum3", "columnName": "注册日期",isSortable: true },
+                        {"columnValue": "tableNum4", "columnName": "客户名称", width: 150 },
+                        {"columnValue": "tableNum5", "columnName": "报警日期",isSortable: true },
+                        {"columnValue": "alarmdm", "columnName": "报警代码", width: 80 },
+                        {"columnValue": "tableNum7", "columnName": "代码类别" },
+                        {"columnValue": "tableNum8", "columnName": "处理方式", width: 80 },
                     ]
                     this.tableData = JSON.parse(JSON.stringify(this.tableData))
                     this.tableLoading = false;
@@ -138,6 +127,7 @@
                 this.searchInput3 = "";
                 this.searchInput4 = "";
                 this.searchInput5 = "";
+                this.searchInput6 = "";
                 this.getTableList();
             },
         },

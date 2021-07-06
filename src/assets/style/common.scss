@@ -760,3 +760,20 @@ li{
 iframe {
     height: 200px !important;
 }
+.zll-timeline {
+    .el-timeline-item {
+        padding-bottom: 30px;
+    }
+}
+.CloudService {
+    .el-badge__content.is-fixed {
+        z-index: 111;
+        right: 15px;
+    }
+}
+.distpicker-address-wrapper select {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    border: 1px solid #DCDFE6;
+}

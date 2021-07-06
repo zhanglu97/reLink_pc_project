@@ -28,15 +28,6 @@
             </template>
         </sys-table>
         
-        <!-- 新增管理用户弹框 -->
-        <div class="zll-dialog">
-            <popout :title="title" :visible.sync="addDialog" v-if="addDialog" >
-                <Add ref="add" slot="content" @addForm="getFormData"></Add>
-                <template slot="bottom">
-                    <p class="zll-botton" @click="()=>{this.$refs.add.setFormData('addForm')}">提 交</p>
-                </template>
-            </popout>
-        </div> 
         <!-- 查看弹框 -->
         <div class="zll-dialog">
             <popout title="客户全局数据" :visible.sync="detailDialog" v-if="detailDialog" class="longSize">
@@ -112,10 +103,6 @@
                     this.tableData = JSON.parse(JSON.stringify(this.tableData))
                     this.tableLoading = false;
                 },500)
-            },
-            getFormData(data){
-                console.log(data)
-                this.addDialog = false
             },
             goDetail(val){ //查看
                 this.detailDialog = true

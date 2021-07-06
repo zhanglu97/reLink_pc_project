@@ -17,14 +17,29 @@ export default [
         title: '云服务',
         icon: 'iconyun',
     }, {
+        name: 'AlarmRecord',//路由name
+        title: '报警记录',
+        icon: 'iconalert',
+    }, {
+        name: 'SparePartManage',//路由name
+        title: '备件管理',
+        icon: 'iconbeijian',
+    }, {
+        name: 'RegisterImpower',//路由name
+        title: '注册授权',
+        icon: 'iconquanxian',
+    }, {
         title: '系统设置',
         icon: 'iconxitongguanli',
         children: [ //子菜单
 //          {
 //              name: 'Send',//路由name
 //              title: '信息发布',
-//          }, 
+//          },  
             {
+                name: 'BasicData',//路由name
+                title: '基础数据',
+            }, {
                 name: 'Organization',//路由name
                 title: '组织架构',
             }, {

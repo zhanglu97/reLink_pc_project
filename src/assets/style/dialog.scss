@@ -33,7 +33,11 @@ $baseColor: #1890ff;
         }
         .text_right {
             float: left;
-            width: calc(100% - 80px)
+            width: calc(100% - 80px);
+            height: 32px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
     .NOnum {
