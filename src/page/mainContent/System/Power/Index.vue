@@ -12,7 +12,7 @@
                 </div>
                 <div class="input_flex">
                     <el-select clearable v-model="searchInput3" placeholder="状态">
-                        <el-option label="正常" value="正常"></el-option>
+                        <el-option label="启用" value="启用"></el-option>
                         <el-option label="停用" value="停用"></el-option>
                     </el-select>
                 </div>
@@ -61,10 +61,25 @@
                 searchInput2: '',
                 searchInput3: '',
                 tableData: [{
-                    tableNum1: '部门',//部门
-                    tableNum2: '角色',//角色
+                    tableNum1: '生产部',//部门
+                    tableNum2: '副总经理',//角色
                     tableNum3: '',//权限
-                    tableNum4: '正常',//状态
+                    tableNum4: '启用',//状态
+                }, {
+                    tableNum1: '生产部',//部门
+                    tableNum2: '车间主任',//角色
+                    tableNum3: '',//权限
+                    tableNum4: '停用',//状态
+                }, {
+                    tableNum1: '生产部',//部门
+                    tableNum2: '班组长',//角色
+                    tableNum3: '',//权限
+                    tableNum4: '启用',//状态
+                }, {
+                    tableNum1: '工艺部',//部门
+                    tableNum2: '科长',//角色
+                    tableNum3: '',//权限
+                    tableNum4: '启用',//状态
                 }],
                 tableHeader:[],
                 addDialog: false, //角色弹框
@@ -76,7 +91,7 @@
                 setTimeout(()=>{
                     this.tableHeader =  [
                         {"columnValue": "tableNum1", "columnName": "部门", width: "100"},
-                        {"columnValue": "tableNum2", "columnName": "角色", width: "100"},
+                        {"columnValue": "tableNum2", "columnName": "角色", width: "200"},
                         {"columnValue": "tableNum3", "columnName": "权限"},
                         {"columnValue": "tableNum4", "columnName": "状态", width: "100"},
                     ]

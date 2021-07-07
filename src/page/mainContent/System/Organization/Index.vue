@@ -35,24 +35,26 @@
                 type: '',
                 addDialog: false, //角色弹框
                 data: [{
-                    label: '质量部',
+                    label: '售后服务部',
                     children: [{
-                        label: '审计组',
+                        label: '华东组',
                     }, {
-                        label: '检验组',
+                        label: '华南组',
                     }, {
-                        label: '考核组',
+                        label: '华中组',
                     }]
                 }, {
-                    label: '生产部',
+                    label: '技术部',
                     children: [{
                         label: '审计组',
                     },]
                 }, {
-                    label: '采购部',
+                    label: '财务部',
                     children: [{
                         label: '审计组',
                     },]
+                }, {
+                    label: '仓库',
                 }],
                 defaultProps: {
                     children: 'children',

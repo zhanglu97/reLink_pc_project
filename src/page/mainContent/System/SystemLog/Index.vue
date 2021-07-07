@@ -1,77 +1,105 @@
 <template>
     <div class="SystemLog">
-        <h2 class="page_title_h2">系统日志</h2>
-        <!-- 头部搜索 -->
-        <div class="Search_Top_Input">
-            <div class="search_list" style="width: calc(100%) !important">
-                <div class="input_flex">
-                    <el-input clearable v-model="searchInput1" placeholder="用户名"></el-input>
-                </div>
-                <div class="input_flex">
-                    <el-date-picker v-model="searchInput2" type="daterange" range-separator="-" start-placeholder="开始日期" end-placeholder="结束日期"> </el-date-picker>
-                </div>
-                <div class="input_flex search">
-                    <span class="zll-search">搜索</span>
-                    <span class="zll-search-reset" @click="searchReset()">重置</span>
-                </div>
-            </div>
-		</div>
-        <!-- table -->
-        <sys-table  
-            :isMultipleSelection="false" 
-            :tableData="tableData" 
-            :tableLoading="tableLoading" 
-            :tableHeader="tableHeader"
-            :scopeWidth="120"
-            :isOperate="false"
-        >
-        </sys-table>
+        <h2 class="page_title_h2">日志管理</h2>
+        <div class="nav_tab">
+            <div @click="getshow(1)" :class="{active:shows == 1}" class="MenuList left">登录日志</div>
+            <div @click="getshow(2)" :class="{active:shows == 2}" class="MenuList middle">系统日志</div>
+            <div class="clearBoth"></div>
+        </div>
+        <div class="User-body">
+            <LoginLog v-if="shows == 1"></LoginLog>
+            <SystemLog v-if="shows == 2"></SystemLog>
+        </div>
     </div>
 </template>
 
 <script>
-    export default {
-        data(){
-            return {
-                searchInput1: '',
-                searchInput2: '',
-                tableLoading:true, //table刷新
-                tableData: [{
-                    tableNum1: '日期',//日期
-                    tableNum2: '用户名',//用户名
-                    tableNum3: '姓名',//姓名
-                    tableNum4: '操作记录',//操作记录
-                }],
-                tableHeader:[],
-                selectList: [],
-            }
+import LoginLog from './LoginLog/Index'
+import SystemLog from './SystemLog/Index'
+export default {
+    data() {
+        return {
+            shows: 1,
+        }
+    },
+    methods:{
+        getshow(val) {
+            this.shows = val
         },
-        methods: {
-            getTableList(){//获取表格数据
-                this.tableLoading = true;
-                setTimeout(()=>{
-                    this.tableHeader =  [
-                        {"columnValue": "tableNum1", "columnName": "日期", width: 200},
-                        {"columnValue": "tableNum2", "columnName": "用户名", width: 100 },
-                        {"columnValue": "tableNum3", "columnName": "姓名", width: 100 },
-                        {"columnValue": "tableNum4", "columnName": "操作记录"},
-                    ]
-                    this.tableData = JSON.parse(JSON.stringify(this.tableData))
-                    this.tableLoading = false;
-                },500)
-            },
-            searchReset() { //重置搜索
-                this.searchInput1 = "";
-                this.searchInput2 = "";
-                this.getTableList();
-            },
-        },
-        mounted(){
-            this.getTableList();//显示table
-        },
+    },
+    components: {
+        LoginLog,
+        SystemLog,
     }
+};
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/style/SearchTop.scss";
+.SystemLog {
+    margin: 0 auto;
+    width: 100%;margin-bottom: 15px;
+    border-bottom: 0;
+    .nav_tab {
+        position: relative;
+        &::after {
+            content: ' ';
+            width: calc(100% - 385px);
+            height: 1px;
+            background: #e6e6e6;
+            position: absolute;
+            bottom: 0px;
+            right: -15px;
+        }
+    }
+    .MenuList {
+        height: 35px;
+        line-height: 33px;
+        float: left;
+        text-align: center;
+        width: 200px;
+        background: #f7f7f7;
+        color: #333;
+        font-size: 14px;
+        cursor: pointer;
+        border-top: 2px solid #f7f7f7;
+        border-bottom: 1px solid #e6e6e6;
+        &:hover {
+            transition: all .3s;
+            color: #34BFC6;
+            background: #fff;
+            border-top: 2px solid #fff;
+        }
+        &.active {
+            color: #34BFC6;
+            transition: all .3s;
+            background: #fff;
+            border-top: 2px solid #34BFC6;
+            border-bottom: 1px solid #fff;
+        }
+        &.middle {
+            border-left: 1px solid #e6e6e6;
+            border-right: 1px solid #e6e6e6;
+        }
+        &.left {
+            border-left: 1px solid #e6e6e6;
+            position: relative;
+            &::before {
+                content: ' ';
+                width: 15px;
+                height: 1px;
+                background: #e6e6e6;
+                position: absolute;
+                bottom: -1px;
+                left: -15px;
+            }
+        }
+        &.right {
+            border-right: 1px solid #e6e6e6;
+        }
+        
+    }
+    .User-body {
+        padding-top: 15px;
+    }
+}
 </style>

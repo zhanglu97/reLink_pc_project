@@ -2,33 +2,39 @@
     <div class="addProject AlarmCodeAdd">
         <div class="addForm zll-form">
             <el-form :model="addForm" :rules="rules" ref="addForm" class="demo-ruleForm">
-                <el-form-item class="formList" prop="addFormData1" label="品类名称：">
-                    <el-input clearable class="input_right" placeholder="请输入品类名称" v-model="addForm.addFormData1"></el-input>
+                <el-form-item class="formList" prop="addFormData1" label="报警代码：">
+                    <el-input clearable class="input_right" placeholder="请输入报警代码" v-model="addForm.addFormData1"></el-input>
                 </el-form-item>
-                <el-form-item class="formList" prop="addFormData2" label="前置编码：">
-                    <el-input clearable class="input_right" placeholder="请输入前置编码" v-model="addForm.addFormData2"></el-input>
+                <el-form-item class="formList" prop="addFormData2" label="故障内容：">
+                    <el-input clearable class="input_right" placeholder="请输入故障内容" v-model="addForm.addFormData2"></el-input>
+                </el-form-item>
+                <el-form-item class="formList" prop="addFormData3" label="处理方法：">
+                    <el-input clearable class="input_right" type="textarea" :rows="3"  placeholder="请输入处理方法" v-model="addForm.addFormData3"></el-input>
                 </el-form-item>
             </el-form>
         </div>
     </div>
 </template>
 <script>
-import { CategoryName, CategoryNum } from '@/assets/js/verify'
 export default {
     data(){
         return {
             disabled: false,
             imgSrc: {},
             addForm:{
-                addFormData1: '',//品类名称
-                addFormData2: '',//前置编码
+                addFormData1: '',//报警代码
+                addFormData2: '',//故障内容
+                addFormData3: '',//处理方法
             },
             rules: {
                 addFormData1:[
-                    { required: true, validator: CategoryName, trigger: 'blur' },
+                    { required: true,  message: '请输入报警代码', trigger: 'blur' },
                 ],
                 addFormData2:[
-                    { required: true, validator: CategoryNum, trigger: 'blur' },
+                    { required: true,  message: '请输入故障内容', trigger: 'blur' },
+                ],
+                addFormData3:[
+                    { required: true,  message: '请输入处理方法', trigger: 'blur' },
                 ],
             },
         }

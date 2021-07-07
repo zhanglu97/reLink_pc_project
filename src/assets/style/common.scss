@@ -365,6 +365,12 @@ li{
         }
     }
 }
+.DataCopy_table .zll-table {
+    .el-table td {
+        height: 35px;
+        line-height: 35px;
+    }
+}
 .zll-table {
     .el-table {
         font-size: 12px;
@@ -372,7 +378,7 @@ li{
     .el-table th.is-leaf {
         color: #333;
         font-weight: 600;
-        background: #a4c6ea !important;
+        background: #d0d9ea !important;
     }
     .el-table td, .el-table th {
         padding: 2px 0;
@@ -767,7 +773,7 @@ iframe {
 }
 .CloudService {
     .el-badge__content.is-fixed {
-        z-index: 111;
+        // z-index: 111;
         right: 15px;
     }
 }

@@ -8,7 +8,7 @@
             </el-form>
         </div>
         <div class="Table_body zll-table powerTable">
-            <el-table :data="powerTable"
+            <el-table :data="powerTable"  stripe
                       border style="width: 100%"
                       tooltip-effect="light"
                       :span-method="arraySpanMethod"
@@ -43,153 +43,78 @@
                 },
                 powerTable:[],
                 powerData: [{
-                    mainTitle: '信息公告',
+                    mainTitle: '通知公告',
                     children: [{
+                        subtitle: '',
+                        content: [
+                            { title: '查看', value: '通知公告查看' },
+                        ],
                     }]
-                    
                 },{
-                    mainTitle: '准入申请',
+                    mainTitle: '客户总览',
                     children: [{
-                        subtitle: '新增申请',
+                        subtitle: '',
                         content: [
-                            { title: '新增', value: '新增申请新增' },
-                            { title: '保存', value: '新增申请保存' },
-                            { title: '提交', value: '新增申请提交' }
-                        ],
-                    },{
-                        subtitle: '申请管理',
-                        content: [
-                            { title: '删除', value: '申请管理新增' },
-                            { title: '查看', value: '申请管理查看' },
-                            { title: '编辑', value: '申请管理编辑' },
-                            { title: '作废', value: '申请管理作废' }
-                        ],
-                    },{
-                        subtitle: '批次请检',
-                        content: [
-                            { title: '入库批检', value: '入库批检' },
-                            { title: '查看', value: '批次请检查看' },
-                            { title: '编辑', value: '批次请检编辑' },
-                            { title: '删除', value: '批次请检删除' }
+                            { title: '查看', value: '客户总览查看' },
                         ],
                     }] 
                 },{
-                    mainTitle: '审计管理',
+                    mainTitle: '负荷指数',
                     children: [{
-                        subtitle: '准入审计',
+                        subtitle: '',
                         content: [
-                            { title: '查看', value: '准入审计查看' },
-                            { title: '审计', value: '准入审计审计' }
-                        ],
-                    }, {
-                        subtitle: '动态审计',
-                        content: [
-                            { title: '查看', value: '动态审计查看' },
-                            { title: '审计', value: '动态审计审计' }
-                        ],
-                    }, {
-                        subtitle: '定时审计',
-                        content: [
-                            { title: '查看', value: '定时审计查看' },
-                            { title: '审计', value: '定时审计审计' }
-                        ],
-                    }, {
-                        subtitle: '年度计划',
-                        content: [
-                            { title: '新增', value: '年度计划新增' },
-                            { title: '查看', value: '年度计划查看' },
-                            { title: '编辑', value: '年度计划编辑' }
-                        ],
-                    }, {
-                        subtitle: '质量回顾',
-                        content: [
-                            { title: '新增', value: '质量回顾新增' },
-                            { title: '查看', value: '质量回顾查看' },
-                            { title: '编辑', value: '质量回顾编辑' }
-                        ],
-                    }]
-                },{
-                    mainTitle: '供应商管理',
-                    children: [{
-                        subtitle: '准供应商',
-                        content: [
-                            { title: '查看', value: '准供应商查看' },
-                        ],
-                    }, {
-                        subtitle: '合格供应商',
-                        content: [
-                            { title: '查看', value: '合格供应商查看' },
-                        ],
-                    }, {
-                        subtitle: '资质时效',
-                        content: [
-                            { title: '查看', value: '资质时效查看' },
+                            { title: '查看', value: '负荷指数查看' },
                         ],
                     },]
                 },{
-                    mainTitle: '检验考察',
+                    mainTitle: '云服务',
                     children: [{
-                        subtitle: '检验结果',
+                        subtitle: '我的服务',
                         content: [
-                            { title: '查看', value: '检验结果查看' },
-                        ],
-                    }, {
-                        subtitle: 'QC检验',
-                        content: [
-                            { title: '查看', value: 'QC检验查看' },
-                            { title: '检验', value: 'QC检验检验' },
-                            { title: '报告', value: 'QC检验报告' },
-                        ],
-                    }, {
-                        subtitle: '稳定性考察',
-                        content: [
-                            { title: '新增', value: '稳定性考察新增' },
-                            { title: '考察', value: '稳定性考察考察' },
+                            { title: '查看', value: '我的服务查看' },
                         ],
                     },{
-                        subtitle: '留样考察',
+                        subtitle: '服务中心',
                         content: [
-                            { title: '新增', value: '留样考察新增' },
-                            { title: '编辑', value: '留样考察编辑' },
-                            { title: '查看', value: '留样考察查看' },
-                            { title: '考察', value: '留样考察考察' },
+                            { title: '查看', value: '服务中心查看' },
+                        ],
+                    },{
+                        subtitle: '统计查询',
+                        content: [
+                            { title: '查看', value: '统计查询查看' },
                         ],
                     },]
                 },{
-                    mainTitle: '审批',
+                    mainTitle: '报警记录',
                     children: [{
-                        subtitle: '准入审批',
-                    },{
-                        subtitle: '动态审批',
-                    },{
-                        subtitle: '质量标准',
-                    },{
-                        subtitle: '物料管理',
+                        subtitle: '',
+                        content: [
+                            { title: '查看', value: '报警记录查看' },
+                        ],
+                    }, ]
+                },{
+                    mainTitle: '备件管理',
+                    children: [{
+                        subtitle: '',
+                        content: [
+                            { title: '查看', value: '备件管理查看' },
+                        ],
                     },]
                 },{
-                    mainTitle: '标准管理',
+                    mainTitle: '注册授权',
                     children: [{
-                        subtitle: '信息发布',
+                        subtitle: '客户注册',
                         content: [
-                            { title: '新增', value: '信息发布新增' },
-                            { title: '删除', value: '信息发布删除' },
+                            { title: '新增', value: '客户注册新增' },
+                            { title: '编辑', value: '客户注册编辑' },
                         ],
                     },{
-                        subtitle: '参数设定',
-                    },{
-                        subtitle: '质量标准',
+                        subtitle: '设备授权',
                         content: [
-                            { title: '新增', value: '质量标准新增' },
-                            { title: '查看', value: '质量标准查看' },
-                            { title: '修订', value: '质量标准修订' },
+                            { title: '授权', value: '设备授权授权' },
+                            { title: '查看', value: '设备授权查看' },
                         ],
-                    },{
-                        subtitle: '资质名称',
-                        content: [
-                            { title: '新增', value: '资质名称新增' },
-                            { title: '编辑', value: '资质名称编辑' },
-                        ],
-                    }]
+                    },]
                 },{
                     mainTitle: '系统',
                     children: [{

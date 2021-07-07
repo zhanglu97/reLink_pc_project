@@ -53,7 +53,10 @@ export default [
                 title: '数据备份',
             }, {
                 name: 'SystemLog',//路由name
-                title: '系统日志',
+                title: '日志管理',
+            }, {
+                name: 'AboutRf',//路由name
+                title: '关于睿孚',
             }
         ]
     },

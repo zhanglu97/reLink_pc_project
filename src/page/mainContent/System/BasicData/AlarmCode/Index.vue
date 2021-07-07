@@ -3,16 +3,25 @@
         <div class="AlarmCode_body">
             <div class="AlarmCode-type">
                 <p class="zll-botton"><i class="el-icon-circle-plus-outline"></i> 新增型号</p>
+                <div class="name-sort" v-for="(item, index) in wordArr" :key="index"  :class="{'active':cur==index}">
+                    <div class="letter">
+                        <p>{{item.letter}}</p>
+                    </div>
+                    <div class="ch-name" ref="wrappercon">
+                        <p @click="goWord(item2,index,index2)" :class="{'active2':cur2==index2}" v-for="(item2, index2) in item.content" :key="index2">{{ item2.name }}</p>
+                    </div>
+                    <div class="clearBoth"></div>
+                </div>
             </div>
             <!-- table -->
             <div class="AlarmCode-table">
                 <div class="top">
-                    <div>
-
+                    <div class="txt">
+                        <p>{{ wordMame }}</p>
                     </div>
                     <div class="button">
                         <p class="zll-botton download"> Excel 导入</p>
-                        <p class="zll-botton"><i class="el-icon-circle-plus-outline"></i> 新增代码项</p>
+                        <p class="zll-botton" @click="edit('',0)" ><i class="el-icon-circle-plus-outline"></i> 新增代码项</p>
                     </div>
                     <div class="clearBoth"></div>
                 </div>
@@ -23,7 +32,7 @@
                     :scopeWidth="120"
                 >
                     <template slot-scope="scope" slot="operate">
-                        <el-button @click="edit(scope.row)" type="text" size="small">编辑</el-button>
+                        <el-button @click="edit(scope.row,1)" type="text" size="small">编辑</el-button>
                     </template>
                 </sys-table>
             </div>
@@ -72,6 +81,48 @@
                 },],
                 tableHeader:[],
                 addDialog: false, //用户弹框
+
+                cur:0,
+                cur2:0,
+                wordMame: '',
+                wordArr: [{
+                    letter: 'F',
+                    content: [{
+                        name: '发格',
+                    }],
+                }, {
+                    letter: 'G',
+                    content: [{
+                        name: '广数',
+                    }],
+                }, {
+                    letter: 'H',
+                    content: [{
+                        name: '海德汉',
+                    }, {
+                        name: '华数',
+                    }],
+                }, {
+                    letter: 'L',
+                    content: [{
+                        name: '力士乐',
+                    }],
+                }, {
+                    letter: 'M',
+                    content: [{
+                        name: '马扎克',
+                    }],
+                },  {
+                    letter: 'S',
+                    content: [{
+                        name: '三菱',
+                    }],
+                }, {
+                    letter: 'X',
+                    content: [{
+                        name: '西门子',
+                    }],
+                }, ],
             }
         },
         methods: {
@@ -87,18 +138,24 @@
                     this.tableLoading = false;
                 },500)
             },
-            addUser(){
-                this.title = '新增'
-                this.addDialog = true
-            },
             getFormData(data){
                 console.log(data)
                 this.addDialog = false
             },
-            edit(val){ //编辑
+            edit(val,type){ //编辑
                 this.addDialog = true
-                this.title = '编辑'
+                if(type == 0) {
+                    this.title = '新增'
+                }else{
+                    this.title = '编辑'
+                }
             },
+            goWord(val,index,index2) {
+                console.log(val)
+                this.wordMame = val.name
+                this.cur = index
+                this.cur2 = index2
+            }
         },
         mounted(){
             this.getTableList();//显示table
@@ -120,6 +177,25 @@
             height: 26px;
             line-height: 26px;
             padding: 0;
+            margin-bottom: 15px;
+        }
+        .name-sort {
+            height: 26px;
+            line-height: 26px;
+            .letter {
+                width: 40px;
+                float: left;
+            }
+            .ch-name {
+                width: calc(100% - 40px);
+                float: left;
+                cursor: pointer;
+            }
+            &.active {
+                .active2 {
+                    color: #34bfc6;
+                }
+            }
         }
     }
     .AlarmCode-table {
@@ -129,6 +205,12 @@
         padding-left: 10px;
         .top {
             margin-bottom: 15px;
+            .txt {
+                float: left;
+                width: calc(100% - 300px);
+                font-size: 14px;
+                color: #34bfc6;
+            }
             .button {
                 float: right;
                 width: 300px;

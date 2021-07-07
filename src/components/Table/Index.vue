@@ -172,6 +172,13 @@
                         color.color = "#f44336"
                     };
                 }
+                if( name == 'copyState' ) {//数据备份——备份状态
+                    if(row.copyState == '成功') {
+                        color.backgroundColor = "#e1f3d8"
+                    }else {
+                        color.backgroundColor = "#fde2e2"
+                    }
+                }
                 return color;
             },
             getSummaries(param) {

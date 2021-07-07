@@ -6,7 +6,8 @@ import Organization from '@/page/mainContent/System/Organization/Index' //系统
 import User from '@/page/mainContent/System/User/Index' //系统管理——用户管理
 import Power from '@/page/mainContent/System/Power/Index' //系统管理——角色权限
 import DataCopy from '@/page/mainContent/System/DataCopy/Index' //系统管理——数据备份
-import SystemLog from '@/page/mainContent/System/SystemLog/Index' //系统管理——系统日志
+import SystemLog from '@/page/mainContent/System/SystemLog/Index' //系统管理——日志管理
+import AboutRf from '@/page/mainContent/System/About/Index' //系统管理——关于睿孚
 //**************客户总览**************
 import CustomerOverview from '@/page/mainContent/CustomerOverview/Index' //客户总览
 //**************负荷指数**************
@@ -32,7 +33,12 @@ export default [
         name: 'Send',
         meta: {title: '信息发布'},
         component: Send
-    },{
+    }, {
+        path: 'BasicData',
+        name: 'BasicData',
+        meta: {title: '基础数据'},
+        component: BasicData
+    }, {
         path: 'User',
         name: 'User',
         meta: {title: '用户管理'},
@@ -55,8 +61,13 @@ export default [
     }, {
         path: 'SystemLog',
         name: 'SystemLog',
-        meta: {title: '系统日志'},
+        meta: {title: '日志管理'},
         component: SystemLog
+    }, {
+        path: 'AboutRf',
+        name: 'AboutRf',
+        meta: {title: '关于睿孚'},
+        component: AboutRf
     }, {
         path: 'CustomerOverview',
         name: 'CustomerOverview',
@@ -87,10 +98,5 @@ export default [
         name: 'RegisterImpower',
         meta: {title: '注册授权'},
         component: RegisterImpower
-    }, {
-        path: 'BasicData',
-        name: 'BasicData',
-        meta: {title: '基础数据'},
-        component: BasicData
     },
 ]
