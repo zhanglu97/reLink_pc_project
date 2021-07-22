@@ -2,9 +2,7 @@
 	<div class="Login">
 		<div class="Header">
 			<h3>
-				<img class="logo_img" src="@/assets/img/Login_logo.png">
-				<i></i>
-				睿采智连
+                <img class="logo_img" src="@/assets/img/login_R.png">
 			</h3>
             <div class="header_top_title">
                 <span>睿采智连</span>
@@ -58,7 +56,7 @@
 			</el-form>
 		</div>
 		<div class="footer">
-			<p>Copyright 2019 © Refull All rights reserved    建议使用“Chrome / IE / 搜狗高速” 浏览器</p>
+			<p>Copyright © 2020-2021 睿孚科技 refo.cc版权所有 / 服务热线：025-52288309 / Server@refo.cc</p>
 		</div>
 	</div>
 </template>
@@ -139,6 +137,8 @@
 	.Login {
 		background-image: url(../assets/img/banner_bg1.png);
 		height: 100%;
+        min-width: 1280px;
+        min-height: 720px;
 		background-size: cover;
 		position: relative;
 		.Header {
@@ -180,14 +180,14 @@
 			top: 50vh;
 			left: 10%;
 			img {
-				height: 100px;
+				height: 120px;
 			}
 		}
 		.loginBody {
-			width: 400px;
+			width: 450px;
 			position: absolute;
     		right: 10%;
-			top: 30vh;
+			top: 35vh;
 			height: 250px;
 			background-color: rgba(255, 255, 255, 1);
             box-shadow: 0 0 20px #34bfc6;    

@@ -4,7 +4,7 @@
             <div class="head_logo_img">
             	<img class="Roms" src="@/assets/img/relink_logo.png" />
             </div>
-            <span class="splite">|</span> 睿采智连 · 数字化运营平台
+            <span class="splite">|</span> 睿采智连 · 数字化运营云平台
         </div>
         
         <div class="time">
