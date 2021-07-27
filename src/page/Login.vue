@@ -48,9 +48,14 @@
 					</el-input>
 				</el-form-item>
 				<el-form-item v-if="tabType == 2">
-					<el-input v-model="LoginForm2.yzm" autocomplete="off" placeholder="请输入验证码" @keyup.enter.native="LoginSubmit" class="loginInput">
-						<i slot="prefix" class="el-input__icon el-icon-lock"></i>
-					</el-input>
+                    <div class="left_input">
+                        <el-input v-model="LoginForm2.yzm" autocomplete="off" placeholder="请输入验证码" @keyup.enter.native="LoginSubmit" class="loginInput">
+                            <i slot="prefix" class="el-input__icon el-icon-lock"></i>
+                        </el-input>
+                    </div>
+                    <div class="right_button">
+                        <div class="zll-botton goback">获取验证码</div>
+                    </div>
 				</el-form-item>
 				<div class="login-button" @click="LoginSubmit">登 录</div>
 			</el-form>
@@ -230,6 +235,19 @@
             }
             .el-form {
                 padding: 0 30px;
+            }
+            .left_input {
+                width: calc(100% - 100px);
+                float: left;
+            }
+            .right_button {
+                width: 90px;
+                margin-left: 10px;
+                float: left;
+                .zll-botton {
+                    padding: 0;
+                    border-radius: 5px;
+                }
             }
 		}
 		.footer {
